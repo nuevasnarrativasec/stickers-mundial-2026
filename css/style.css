@@ -1,0 +1,353 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Roboto:wght@400;700&display=swap');
+
+@font-face {
+    font-family: 'Komika Hand';
+    src: url('../fonts/KomikaHand-Bold.woff2') format('woff2'),
+        url('../fonts/KomikaHand-Bold.woff') format('woff');
+    font-weight: bold;    
+}
+
+@font-face {
+    font-family: 'Acto bold';
+    src: url('../fonts/Acto-Bold.woff2') format('woff2'),
+        url('../fonts/Acto-Bold.woff') format('woff');
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: 'Acto medium';
+    src: url('../fonts/Acto-Medium.woff2') format('woff2'),
+        url('../fonts/Acto-Medium.woff') format('woff');
+    font-weight: 500;
+}
+
+
+
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-style: normal;
+        font-display: swap;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: #fff;
+      overflow-x: hidden;
+    }
+
+    /* ─── HERO ─── */
+    .hero {
+        background: url('../img/bg-header.jpg') no-repeat center/cover;
+      position: relative;
+      width: 100%;
+      min-height: 520px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* Stadium background: sky + stands gradient */
+    .hero-bg {
+        
+    }
+
+    
+
+    /* Floodlights */
+    .hero-stands::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background:
+        radial-gradient(ellipse 6px 40px at 4% 0%, #f5f5dc 0%, transparent 100%),
+        radial-gradient(ellipse 6px 40px at 96% 0%, #f5f5dc 0%, transparent 100%);
+    }
+
+    /* Field / grass */
+    .hero-field {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 48%;
+      background:
+        repeating-linear-gradient(
+          90deg,
+          #4a8c28 0%,
+          #4a8c28 3%,
+          #3d7820 3%,
+          #3d7820 6%
+        );
+      z-index: 1;
+    }
+
+    /* Field lines */
+    .hero-field::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 1px;
+      height: 100%;
+      background: rgba(255,255,255,0.25);
+    }
+
+    /* Logo */
+    .logo {
+      position: relative;
+      z-index: 10;
+      margin-top: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+        .logo img{
+            max-width: 30px;
+            height: auto;
+        }
+
+    .logo-icon {
+      width: 48px;
+      height: 48px;
+    }
+
+    /* Hero title */
+    .hero-title {
+      position: relative;
+      z-index: 10;
+      text-align: center;
+      padding: 18px 24px 0;
+      max-width: 700px;
+      line-height: 1.1;
+    }
+
+    .hero-title h1 {
+        background: url('../img/texto-header.png') no-repeat center/cover;
+        font: 2.4rem/1.3 'Komika Hand';
+        text-transform: uppercase;
+       /* -webkit-text-stroke: 5px rgb(255, 255, 255);*/
+        /*paint-order:fill stroke; */
+        color: transparent;
+        /*text-shadow: 2px 2px 6px rgba(0,0,0,0.4);*/
+        padding: 4px 6px 0;
+    }        
+
+        .hero-title h1 .highlight {
+            color: transparent;
+        }
+
+    /* Stickers strip */
+    .stickers-strip {
+      position: relative;
+      z-index: 10;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      padding: 0 20px;
+      margin-top: 16px;
+      gap: 0;
+    }
+
+    .sticker {
+      width: 90px;
+      height: 110px;
+      background: #e8e8e8;
+      border: 3px solid #fff;
+      border-radius: 6px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      margin: 0 -4px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+      position: relative;
+      overflow: hidden;
+      transform: rotate(var(--rot, 0deg));
+      transition: transform 0.2s;
+    }
+
+    /* Sticker shirt colors */
+    .sticker:nth-child(1)  { --rot: -3deg; background: linear-gradient(160deg, #87ceeb 30%, #3a6fc4 100%); }
+    .sticker:nth-child(2)  { --rot: 1deg;  background: linear-gradient(160deg, #f5c518 30%, #2a7a2a 100%); }
+    .sticker:nth-child(3)  { --rot: -1deg; background: linear-gradient(160deg, #b22222 30%, #7a1a1a 100%); }
+    .sticker:nth-child(4)  { --rot: 2deg;  background: linear-gradient(160deg, #f5c518 30%, #d4a800 100%); }
+    .sticker:nth-child(5)  { --rot: -2deg; background: linear-gradient(160deg, #c8102e 30%, #8a0a1e 100%); }
+    .sticker:nth-child(6)  { --rot: 1deg;  background: linear-gradient(160deg, #75aadb 30%, #1c3f8c 100%); }
+    .sticker:nth-child(7)  { --rot: -1deg; background: linear-gradient(160deg, #fdca00 30%, #c09800 100%); }
+    .sticker:nth-child(8)  { --rot: 3deg;  background: linear-gradient(160deg, #1a1a1a 30%, #3a3a3a 100%); }
+    .sticker:nth-child(9)  { --rot: -2deg; background: linear-gradient(160deg, #c8102e 30%, #fff 100%); }
+    .sticker:nth-child(10) { --rot: 1deg;  background: linear-gradient(160deg, #1a1a1a 30%, #4a4a4a 100%); }
+
+    .sticker-player {
+      width: 70px;
+      height: 88px;
+      object-fit: contain;
+    }
+
+    /* Placeholder player silhouette */
+    .sticker-figure {
+      width: 60px;
+      height: 85px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+    }
+
+    .sticker-figure svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    .sticker-brand {
+      position: absolute;
+      bottom: 4px;
+      right: 6px;
+      font-size: 9px;
+      color: rgba(255,255,255,0.7);
+      font-weight: 700;
+    }
+
+    /* Grass edge at bottom of hero */
+    .grass-edge {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 30px;
+      background: #3d7820;
+      z-index: 5;
+    }
+
+    /* ─── TAGLINE SECTION ─── */
+    .tagline {
+      background: #e8e8e8;
+      text-align: center;
+      padding: 28px 20px;
+    }
+
+    .tagline p.main {
+      font-family: 'Acto bold';
+      color: #84A84B;
+      font-size: clamp(14px, 2.5vw, 20px);
+      margin-bottom: 6px;
+    }
+
+        .tagline p.sub {
+            color: #333;
+            font-family: 'Acto medium';
+            font-size: clamp(13px, 2vw, 17px);
+        }
+
+    /* ─── STEPS SECTION ─── */
+    .steps {
+      background: #fff;
+      padding: 40px 20px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 32px;
+    }
+
+    .step {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 480px;
+      text-align: center;
+      gap: 12px;
+    }
+
+    .step-number {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: #84A84B;
+      color: #fff;
+      font-family: 'Komika Hand';
+      font-size: 28px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      box-shadow: 0 2px 8px rgba(90,158,56,0.3);
+    }
+
+    .step p {
+      color: #333;
+      font-family: 'Acto medium';
+      font-size: clamp(14px, 2vw, 16px);
+      line-height: 1.5;
+    }
+
+    .step p strong {
+      font-weight: 700;
+    }
+
+    /* ─── CTA ─── */
+    .cta {
+      display: flex;
+      justify-content: center;
+      padding: 20px 20px 50px;
+    }
+
+    .cta-btn {
+      background: #84A84B;
+      color: #fff;
+      font-family: 'Komika Hand';
+      font-size: clamp(16px, 2.5vw, 20px);
+      text-transform: uppercase;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      box-shadow: 0 4px 14px rgba(90,158,56,0.4);
+      transition: background 0.2s, box-shadow 0.2s, transform 0.1s;
+    }
+
+    .cta-btn:hover {
+      background: #4a8c28;
+      box-shadow: 0 6px 18px rgba(90,158,56,0.5);
+      transform: translateY(-1px);
+    }
+
+    .cta-btn:active {
+      transform: translateY(0);
+    }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 600px) {
+      .sticker {
+        width: 60px;
+        height: 76px;
+      }
+      .hero{
+        min-height: 350px;
+      }
+      .hero-title {
+        padding-top: 10px;
+      }
+      .hero-title h1{
+        font: 1.4rem / 1.3 'Komika Hand';
+      }
+      .tagline p.main,
+      .tagline p.sub,
+      .step p{
+        font-size: 1.1rem;
+      }
+
+
+    }
